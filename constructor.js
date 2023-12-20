@@ -25,12 +25,19 @@ class Api_constructor {
     input2.value = "";
     input3.value = "";
   }
-  appAuth() {
-    const data = document.querySelector(".alert");
+  appAuth(data) {
+    if (data == 1) {
+      const data1 = document.querySelector(".alert");
+      data1.classList.remove("hide");
+      setTimeout(function () {
+        data1.classList.add("hide");
+      }, 2000);
+    }
 
-    data.classList.remove("hide");
+    const data2 = document.querySelector(".alert2");
+    data2.classList.remove("hide");
     setTimeout(function () {
-      data.classList.add("hide");
+      data2.classList.add("hide");
     }, 2000);
   }
   aref(input) {
@@ -59,7 +66,7 @@ class Api_constructor {
       const btn = document.querySelector(".secondBtn");
 
       if (input2.value === "" || input3.value === "" || input4.value === "") {
-        this.appAuth();
+        this.appAuth(2);
       } else {
         this.fetchData(input2.value, input3.value, input4.value)
           .then((result) => {
@@ -88,9 +95,13 @@ class Api_constructor {
             }
           })
           .catch((error) => {
+            // console.dir(error);
+            // console.dir(error);
+
             btn.classList.remove("hide");
-            const data = document.querySelector(".alert");
-            data.innerHTML = `${error.message} due to Network Failure`;
+            const data = document.querySelector(".alert2");
+            data.textContent = `${error.message} due to Network Failure`;
+            console.log(data);
             data.classList.remove("hide");
             data.classList.add("text-uppercase");
             setTimeout(function () {

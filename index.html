@@ -15,7 +15,7 @@
             text-align: right;
         }
         
-        .alert {
+        .alert, .alert2 {
             text-align: center;
             height: 65px;
             color: white;
@@ -91,10 +91,13 @@
                 </table>
             </div>
             <div class="col-6 offset-3 short hide" >
-
+                <div class="bg-danger alert2 hide" style="z-index: 100;">
+                    <h2>Invalid Input</h2>
+                </div>
                 <div class="mb-3">
                     <label for="from2" class="form-label">Convert From:</label>
                     <input type="text" id="from2" placeholder="Amount" class="form-control">
+                  
                     <div class="mb-3">
                         <label for="to2" class="form-label">Convert To:</label>
                         <input type="text" id="to2" placeholder="Convert To" class="form-control">

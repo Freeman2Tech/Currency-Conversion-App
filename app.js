@@ -6,10 +6,7 @@ const date = document.querySelector(".date");
 const enquiry = document.querySelector(".enquiry");
 const rate = document.querySelector(".card-title");
 const cardText = document.querySelector(".card-text");
-const btn2 = document.querySelector(".secondBtn");
-btn2.addEventListener("click", (e) => {
-  console.log(e);
-});
+
 document.querySelector("button").addEventListener("click", (e) => {
   e.preventDefault();
   let data1 = document.querySelector("#from");
@@ -17,7 +14,7 @@ document.querySelector("button").addEventListener("click", (e) => {
   let data3 = document.querySelector("#amount");
 
   if (data1.value === "" || data2.value === "" || data3.value === "") {
-    Google.appAuth();
+    Google.appAuth(1);
   } else {
     Google.fetchData(data1.value, data2.value, data3.value)
       .then((result) => {
@@ -43,7 +40,6 @@ document.querySelector("button").addEventListener("click", (e) => {
             data.classList.add("hide");
           }, 2000);
         }
-        console.log(parseData);
       })
       .catch((error) => {
         btn.classList.remove("hide");
