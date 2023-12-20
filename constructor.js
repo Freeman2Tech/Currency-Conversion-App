@@ -95,9 +95,6 @@ class Api_constructor {
             }
           })
           .catch((error) => {
-            // console.dir(error);
-            // console.dir(error);
-
             btn.classList.remove("hide");
             const data = document.querySelector(".alert2");
             data.textContent = `${error.message} due to Network Failure`;

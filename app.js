@@ -4,6 +4,7 @@ const dataResult = document.querySelector(".result");
 const date = document.querySelector(".date");
 
 const enquiry = document.querySelector(".enquiry");
+
 const rate = document.querySelector(".card-title");
 const cardText = document.querySelector(".card-text");
 
@@ -59,5 +60,12 @@ document.querySelector("a").addEventListener("click", (e) => {
   e.preventDefault();
   dataResult.classList.add("hide");
   enquiry.classList.remove("hide");
+  countries.classList.remove("hide");
+});
+document.querySelector(".backBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector(".short").classList.add("hide");
+  dataResult.classList.add("hide");
+  enquiry.classList.add("hide");
   countries.classList.remove("hide");
 });
